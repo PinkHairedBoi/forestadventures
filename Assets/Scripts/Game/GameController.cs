@@ -49,6 +49,7 @@ public class GameController : MonoBehaviour
 		if (Player == null)
 		{
 			Player = Instantiate(PlayerPrefab);
+			Player.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
 			controller = Player.GetComponent<CharacterController2D>();
 			FindObjectOfType<CameraController>().player = Player.transform;
 		}
@@ -57,5 +58,10 @@ public class GameController : MonoBehaviour
 	void Start()
 	{
 		SpawnPlayer();
+	}
+
+	public void AddCoin()
+	{
+		Debug.Log("Plus Monetka!");
 	}
 }

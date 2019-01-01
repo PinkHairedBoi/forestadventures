@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6972002650118362628}
   - component: {fileID: 6972002650118362629}
-  - component: {fileID: 6972002650118362626}
+  - component: {fileID: 4840195648343495374}
+  - component: {fileID: 9070036948262871420}
+  - component: {fileID: 8963935446385017377}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -66,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1116797311
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 50c6defebc967da41922bbed77e12fb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -80,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6972002650118362626
+--- !u!95 &4840195648343495374
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -90,7 +92,7 @@ Animator:
   m_GameObject: {fileID: 6972002650118362627}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e778b02fd0fea10498f29c3895f6e7e8, type: 2}
+  m_Controller: {fileID: 9100000, guid: f025520c623d5c0458014a959ab55227, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -99,6 +101,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &9070036948262871420
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972002650118362627}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.125
+--- !u!114 &8963935446385017377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972002650118362627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b40ba2d1a34fc419ef4656237bbfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6972002650510401540
 GameObject:
   m_ObjectHideFlags: 0
