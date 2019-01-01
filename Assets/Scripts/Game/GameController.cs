@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-	public float speed = 40f;
+    public CoinController CoinController;
+    public StarsController StarsController;
+
+    public float speed = 40f;
 	public GameObject PlayerPrefab;
 
 	GameObject Player;
@@ -13,6 +17,8 @@ public class GameController : MonoBehaviour
 	bool isLeft = false;
 	bool isRight = false;
 	bool isJump = false;
+
+    public GameObject endPanel;
 
 	public float HorizontalSpeed { get => horizontalSpeed; set { if (Player == null) return; horizontalSpeed = value; if (value != 0) Player.GetComponent<Animator>().SetBool("isRunning", true); else Player.GetComponent<Animator>().SetBool("isRunning", false); } }
 
@@ -62,6 +68,27 @@ public class GameController : MonoBehaviour
 
 	public void AddCoin()
 	{
-		Debug.Log("Plus Monetka!");
+        CoinController.Add();
 	}
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void EndGame()
+    {
+        Invoke("OpenEndPanel", 1f);
+    }
+
+    void OpenEndPanel()
+    {
+        StarsController.SetStars(CoinController.GetStars());
+        endPanel.SetActive(true);
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    public GameObject effect;
     void Start()
     {
         
@@ -14,7 +15,8 @@ public class Coin : MonoBehaviour
 		if (collision.gameObject.layer == 8)
 		{ 
 			FindObjectOfType<GameController>().AddCoin();
-			Destroy(gameObject);
+            Instantiate(effect).transform.position = transform.position;
+            Destroy(transform.parent.gameObject);
 		}
 	}
 }

@@ -43,6 +43,6 @@ public class LevelScreen : MonoBehaviour
 	public void Play()
 	{
 		Level.difficulty = Level.choosen.lvl;
-		SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("Level" + Level.difficulty.ToString());
 	}
 }

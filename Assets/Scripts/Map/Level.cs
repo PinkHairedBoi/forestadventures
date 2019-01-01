@@ -36,12 +36,4 @@ public class Level : MonoBehaviour
 	{
 		transform.GetChild(0).gameObject.SetActive(false);
 	}
-
-	void Start()
-	{
-		for (int i = 0; i < 3; i++)
-		{
-			transform.Find("Stars").GetChild(i).GetComponent<Image>().sprite = LevelsManager.starTypes[i < maxStars ? 1 : 0];
-		}
-	}
 }
