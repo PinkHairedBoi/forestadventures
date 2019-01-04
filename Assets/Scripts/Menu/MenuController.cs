@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
 
 	public void LoadGame()
 	{
-		SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("Level1");
 	}
 
 	public void LoadMap()
