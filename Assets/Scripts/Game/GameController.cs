@@ -5,22 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+	public static GameController _instance;
     public CoinController CoinController;
-    public StarsController StarsController;
+	public HeartController HeartController;
+	public StarsController StarsController;
 
     public float speed = 40f;
 	public GameObject PlayerPrefab;
 
-	GameObject Player;
+	GameObject player;
 	CharacterController2D controller;
 	float horizontalSpeed = 0f;
 	bool isLeft = false;
 	bool isRight = false;
 	bool isJump = false;
 
-    public GameObject endPanel;
+	public GameObject endPanel;
+	public GameObject losePanel;
 
-	public float HorizontalSpeed { get => horizontalSpeed; set { if (Player == null) return; horizontalSpeed = value; if (value != 0) Player.GetComponent<Animator>().SetBool("isRunning", true); else Player.GetComponent<Animator>().SetBool("isRunning", false); } }
+	public float HorizontalSpeed { get => horizontalSpeed; set { if (player == null) return; horizontalSpeed = value; if (value != 0) player.GetComponent<Animator>().SetBool("isRunning", true); else player.GetComponent<Animator>().SetBool("isRunning", false); } }
 
 	public void OnPointerDown(bool i)
 	{
@@ -43,27 +46,28 @@ public class GameController : MonoBehaviour
 		isJump = b;
 	}
 
+	void Start()
+	{
+		_instance = this;
+		SpawnPlayer();
+	}
+	
 	void Update()
 	{
-		if (Player == null) return;
+		if (player == null) return;
 		HorizontalSpeed = (isLeft ? -1 : 0) + (isRight ? 1 : 0);
 		controller.Move(HorizontalSpeed * speed * Time.deltaTime, false, isJump);
 	}
 
 	public void SpawnPlayer()
 	{
-		if (Player == null)
+		if (player == null)
 		{
-			Player = Instantiate(PlayerPrefab);
-			Player.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
-			controller = Player.GetComponent<CharacterController2D>();
-			FindObjectOfType<CameraController>().player = Player.transform;
+			player = Instantiate(PlayerPrefab);
+			player.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+			controller = player.GetComponent<CharacterController2D>();
+			FindObjectOfType<CameraController>().player = player.transform;
 		}
-	}
-
-	void Start()
-	{
-		SpawnPlayer();
 	}
 
 	public void AddCoin()
@@ -81,14 +85,29 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void EndGame()
+	public void LoseGame()
+	{
+		OpenLosePanel();
+	}
+
+	public void EndGame()
     {
         Invoke("OpenEndPanel", 1f);
     }
+
+	public HeartController GetHealth()
+	{
+		return HeartController;
+	}
 
     void OpenEndPanel()
     {
         StarsController.SetStars(CoinController.GetStars());
         endPanel.SetActive(true);
     }
+
+	void OpenLosePanel()
+	{
+		losePanel.SetActive(true);
+	}
 }
