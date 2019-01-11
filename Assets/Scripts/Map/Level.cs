@@ -9,8 +9,8 @@ public class Level : MonoBehaviour
 
 	public int lvl;
 	public string lname;
-
-	public int maxStars = 0;
+	public StarsController starsController;
+	public int stars { get { return starsController.Get(); } }
 	bool selected;
 
 	public void OnClick()
@@ -35,5 +35,18 @@ public class Level : MonoBehaviour
 	public void Deselect()
 	{
 		transform.GetChild(0).gameObject.SetActive(false);
+	}
+
+	private void Start()
+	{
+		if (PlayerPrefs.HasKey("Lvl" + lvl + "stars"))
+		{
+			starsController.Set(PlayerPrefs.GetInt("Lvl" + lvl + "stars"));
+		}
+		else
+		{
+			PlayerPrefs.SetInt("Lvl" + lvl + "stars", 0);
+			starsController.Set(0);
+		}
 	}
 }

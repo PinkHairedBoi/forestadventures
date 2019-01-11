@@ -7005,7 +7005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoinController: {fileID: 1786692393}
   HeartController: {fileID: 1456221945}
-  StarsController: {fileID: 1752269916}
+  starsController: {fileID: 1752269916}
   speed: 8
   PlayerPrefab: {fileID: 1469855908363908561, guid: b258bc0e369aa5b40909672cce8b10ab,
     type: 3}
@@ -56890,7 +56890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5.000003}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752441786
@@ -57005,6 +57005,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1867878578}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1770169095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770169096}
+  m_Layer: 0
+  m_Name: TIPI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1770169096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770169095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.246, y: -2.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1785445724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7496693412910621421, guid: 9a56ef08ec7eba94f9ed48c2e7e26aa9,

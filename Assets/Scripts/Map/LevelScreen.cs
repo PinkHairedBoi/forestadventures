@@ -11,13 +11,14 @@ public class LevelScreen : MonoBehaviour
 	public GameObject backButton;
 	public static LevelScreen _instance;
 	public TMP_Text lname;
+	public StarsController starsController;
 
     public void Open()
 	{
 		Level l = Level.choosen;
 		
 		lname.text = "<color=#CF0000>Stage 1-" + l.lvl + "</color>\n" + l.lname;
-		SetStars(l.maxStars);
+		starsController.Set(l.stars);
 		bg.SetActive(true);
 		gameObject.SetActive(true);
 		levelName.SetActive(false);
@@ -30,14 +31,6 @@ public class LevelScreen : MonoBehaviour
 		gameObject.SetActive(false);
 		levelName.SetActive(true);
 		backButton.SetActive(true);
-	}
-
-	private void SetStars(int maxStars)
-	{
-		for(int i = 0; i < 3; i++)
-		{
-			transform.Find("Stars").GetChild(i).GetComponent<Image>().sprite = LevelsManager.starTypes[i < maxStars ? 1 : 0];
-		}
 	}
 
 	public void Play()

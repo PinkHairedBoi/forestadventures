@@ -1948,6 +1948,7 @@ GameObject:
   - component: {fileID: 929671393}
   - component: {fileID: 929671396}
   - component: {fileID: 929671394}
+  - component: {fileID: 929671395}
   m_Layer: 5
   m_Name: Stars
   m_TagString: Untagged
@@ -2000,6 +2001,21 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &929671395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929671392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2884ca897d05a4f8d4e0287acdd01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starTypes:
+  - {fileID: 21300000, guid: 53128e7dd2e00014baabe14e1e8a7273, type: 3}
+  - {fileID: 21300002, guid: 53128e7dd2e00014baabe14e1e8a7273, type: 3}
 --- !u!222 &929671396
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2102,6 +2118,7 @@ MonoBehaviour:
   levelName: {fileID: 20915429}
   backButton: {fileID: 2018368956}
   lname: {fileID: 1640975611}
+  starsController: {fileID: 929671395}
 --- !u!1 &1120617806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,7 +2371,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2518,7 +2535,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}

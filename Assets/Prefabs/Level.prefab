@@ -54,7 +54,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 232898676240091347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -133,7 +132,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 232898676478948655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -163,7 +161,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 232898676478948655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -217,13 +214,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 232898676478948655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 29078b75dbf794d499c333be5cd9bbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lvl: 0
   lname: 
-  maxStars: 0
+  starsController: {fileID: 526387148627126314}
 --- !u!1 &3849896475548040498
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +275,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3849896475548040498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -309,7 +304,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3849896475548040498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -371,7 +365,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4642626878406841547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -401,7 +394,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4642626878406841547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -419,6 +411,7 @@ GameObject:
   - component: {fileID: 6244531399368595689}
   - component: {fileID: 8282382762851691431}
   - component: {fileID: 663630117000475795}
+  - component: {fileID: 526387148627126314}
   m_Layer: 5
   m_Name: Stars
   m_TagString: Untagged
@@ -465,7 +458,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7283419348919334626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -480,8 +472,21 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+--- !u!114 &526387148627126314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7283419348919334626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2884ca897d05a4f8d4e0287acdd01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starTypes:
+  - {fileID: 21300000, guid: 53128e7dd2e00014baabe14e1e8a7273, type: 3}
+  - {fileID: 21300002, guid: 53128e7dd2e00014baabe14e1e8a7273, type: 3}
 --- !u!1 &7856965207018321266
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +542,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7856965207018321266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -567,7 +571,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7856965207018321266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

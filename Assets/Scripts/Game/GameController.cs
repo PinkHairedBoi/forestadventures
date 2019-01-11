@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 	public static GameController _instance;
     public CoinController CoinController;
 	public HeartController HeartController;
-	public StarsController StarsController;
+	public StarsController starsController;
 
     public float speed = 40f;
 	public GameObject PlayerPrefab;
@@ -85,6 +85,12 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+	public void UpdateRecord()
+	{
+		if (PlayerPrefs.GetInt("Lvl" + Level.difficulty + "stars") < starsController.Get())
+			PlayerPrefs.SetInt("Lvl" + Level.difficulty + "stars", starsController.Get());
+	}
+
 	public void LoseGame()
 	{
 		OpenLosePanel();
@@ -92,7 +98,9 @@ public class GameController : MonoBehaviour
 
 	public void EndGame()
     {
-        Invoke("OpenEndPanel", 1f);
+		starsController.Set(CoinController.GetStars());
+		UpdateRecord();
+		Invoke("OpenEndPanel", 1f);
     }
 
 	public HeartController GetHealth()
@@ -102,7 +110,6 @@ public class GameController : MonoBehaviour
 
     void OpenEndPanel()
     {
-        StarsController.SetStars(CoinController.GetStars());
         endPanel.SetActive(true);
     }
 
