@@ -6,6 +6,7 @@ public class MenuController : MonoBehaviour
 {
 	public GameObject mainMenu;
 	public GameObject settingsMenu;
+	public GameObject infoMenu;
 	public Slider musicSlider;
 	public Slider soundSlider;
 	public Slider effectsSlider;
@@ -45,6 +46,12 @@ public class MenuController : MonoBehaviour
 	{
 		mainMenu.SetActive(!mainMenu.activeSelf);
 		settingsMenu.SetActive(!mainMenu.activeSelf);
+	}
+
+	public void InfoButton()
+	{
+		mainMenu.SetActive(!mainMenu.activeSelf);
+		infoMenu.SetActive(!mainMenu.activeSelf);
 	}
 
 	public void VibroButton()
